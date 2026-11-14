@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Computer Science FM (216.0 MHz) — інформаційний простір про інформатику, комп'ютери, технології, науку та цифровий світ.">
+
+    <meta name="theme-color" content="#101923">
+
+    <title>Computer Science FM — 216.0 MHz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #101923;
+            color: #e8edf2;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 40px, 1000px);
+            margin: auto;
+        }
+
+        /* ШАПКА */
+
+        header {
+            background: #14212d;
+            border-bottom: 1px solid #293b4a;
+        }
+
+        .header-inner {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: #1c425c;
+            color: #65c8ff;
+            font-size: 23px;
+        }
+
+        .header-frequency {
+            color: #65c8ff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* ГОЛОВНИЙ БЛОК */
+
+        .hero {
+            padding: 90px 0 85px;
+            background:
+                radial-gradient(
+                    ellipse at 85% 20%,
+                    #20445b 0%,
+                    transparent 45%
+                ),
+                linear-gradient(135deg, #142331, #101923);
+            border-bottom: 1px solid #293b4a;
+        }
+
+        .eyebrow {
+            color: #65c8ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 18px 0 0;
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        h1 span {
+            color: #65c8ff;
+        }
+
+        .frequency {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .frequency-number {
+            font-size: clamp(30px, 5vw, 43px);
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #65c8ff;
+        }
+
+        .frequency-unit {
+            color: #91aabd;
+            font-size: 13px;
+            letter-spacing: 3px;
+        }
+
+        /* ШКАЛА РАДІО */
+
+        .radio-scale {
+            margin-top: 27px;
+            max-width: 440px;
+        }
+
+        .scale-line {
+            height: 2px;
+            background: #36566b;
+            position: relative;
+        }
+
+        .scale-line::before,
+        .scale-line::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            width: 2px;
+            height: 10px;
+            background: #65c8ff;
+        }
+
+        .scale-line::before {
+            left: 0;
+        }
+
+        .scale-line::after {
+            right: 0;
+        }
+
+        .scale-marker {
+            position: absolute;
+            left: 50%;
+            top: -6px;
+            width: 14px;
+            height: 14px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: #65c8ff;
+            box-shadow: 0 0 14px #65c8ff;
+        }
+
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            color: #7791a4;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-top: 35px;
+            color: #b5c4d1;
+            font-size: 17px;
+        }
+
+        .hero-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            color: #91aabd;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #65c8ff;
+            border-radius: 50%;
+        }
+
+        /* ОСНОВНИЙ ВМІСТ */
+
+        main {
+            padding: 65px 0;
+        }
+
+        section {
+            margin-bottom: 65px;
+        }
+
+        .section-label {
+            color: #65c8ff;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin: 8px 0 15px;
+            font-size: 26px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            color: #b5c4d1;
+        }
+
+        .definition {
+            margin-top: 25px;
+            padding: 22px 25px;
+            border-left: 3px solid #65c8ff;
+            background: #172633;
+            border-radius: 0 9px 9px 0;
+        }
+
+        .definition p {
+            margin: 0;
+            color: #b5c4d1;
+        }
+
+        .definition strong {
+            color: #e8edf2;
+        }
+
+        /* АРХІВ */
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .archive-card {
+            display: flex;
+            flex-direction: column;
+            padding: 26px;
+            min-height: 225px;
+            border: 1px solid #2c4051;
+            border-radius: 13px;
+            background: #172633;
+            transition: 0.2s ease;
+        }
+
+        .archive-card:hover {
+            border-color: #65c8ff;
+            background: #1b3040;
+            transform: translateY(-3px);
+        }
+
+        .file-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #203d52;
+            color: #65c8ff;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .archive-card h3 {
+            margin: 0 0 5px;
+            font-size: 19px;
+        }
+
+        .archive-card p {
+            margin: 0;
+            color: #91aabd;
+            font-size: 13px;
+        }
+
+        .archive-link {
+            margin-top: auto;
+            padding-top: 20px;
+            color: #65c8ff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .archive-note {
+            margin-top: 22px;
+            padding: 17px 20px;
+            background: #172633;
+            border-radius: 8px;
+            color: #a9bac8;
+            font-size: 14px;
+        }
+
+        /* ПРО ВЕБВЕРСІЮ */
+
+        .web-version {
+            padding: 28px;
+            border: 1px solid #2c4051;
+            border-radius: 13px;
+            background: #142331;
+        }
+
+        .web-version p {
+            margin-bottom: 0;
+            color: #a9bac8;
+        }
+
+        /* ФУТЕР */
+
+        footer {
+            padding: 25px 0;
+            border-top: 1px solid #293b4a;
+            color: #8297a8;
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer strong {
+            color: #b5c4d1;
+            font-weight: 500;
+        }
+
+        /* МОБІЛЬНА ВЕРСІЯ */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 30px, 1000px);
+            }
+
+            .header-inner {
+                min-height: 68px;
+            }
+
+            .logo {
+                font-size: 13px;
+            }
+
+            .header-frequency {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            main {
+                padding: 45px 0;
+            }
+
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .archive-card {
+                min-height: 195px;
+            }
+
+            .web-version {
+                padding: 22px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ШАПКА -->
+
+    <header>
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⌘</div>
+                <span>COMPUTER SCIENCE FM</span>
+            </a>
+
+            <div class="header-frequency">
+                216.0 MHz
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ГОЛОВНИЙ БЛОК -->
+
+    <div class="hero">
+        <div class="container">
+
+            <div class="eyebrow">
+                DIGITAL KNOWLEDGE RADIO
+            </div>
+
+            <h1>
+                COMPUTER<br>
+                <span>SCIENCE FM</span>
+            </h1>
+
+            <div class="frequency">
+                <div class="frequency-number">216.0</div>
+                <div class="frequency-unit">MHz</div>
+            </div>
+
+            <div class="radio-scale">
+                <div class="scale-line">
+                    <div class="scale-marker"></div>
+                </div>
+
+                <div class="scale-labels">
+                    <span>INFORMATION</span>
+                    <span>TECHNOLOGY</span>
+                    <span>KNOWLEDGE</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                Інформаційний простір про комп'ютери,
+                програмне забезпечення, цифрові технології,
+                науку та світ інформації.
+            </p>
+
+            <div class="hero-status">
+                <span class="status-dot"></span>
+                ВЕБВЕРСІЯ TELEGRAM-КАНАЛУ
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ОСНОВНИЙ ВМІСТ -->
+
+    <main>
+        <div class="container">
+
+            <!-- ПРО ІНФОРМАТИКУ -->
+
+            <section>
+
+                <div class="section-label">
+                    ABOUT COMPUTER SCIENCE
+                </div>
+
+                <h2 class="section-title">
+                    Що таке інформатика?
+                </h2>
+
+                <div class="about-text">
+
+                    <p>
+                        Інформатика — наука про інформацію,
+                        методи та засоби її опрацювання.
+                        Вона охоплює широкий спектр питань:
+                        від алгоритмів і програмування
+                        до комп'ютерних систем та
+                        інформаційних технологій.
+                    </p>
+
+                </div>
+
+                <div class="definition">
+
+                    <p>
+                        Інформатика
+                        (фр. <em>informatique</em>,
+                        англ. <em>informatics, computer science</em>,
+                        нім. <em>Informatik</em>) —
+                        наука про інформацію, методи та
+                        засоби її опрацювання.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ПРО КАНАЛ -->
+
+            <section>
+
+                <div class="section-label">
+                    ABOUT THE CHANNEL
+                </div>
+
+                <h2 class="section-title">
+                    Computer Science FM
+                </h2>
+
+                <div class="about-text">
+
+                    <p>
+                        Computer Science FM — інформаційний
+                        Telegram-канал про комп'ютери,
+                        програмне забезпечення, інтернет,
+                        цифрові інструменти, науку,
+                        технології та комп'ютерну культуру.
+                    </p>
+
+                    <p>
+                        Тут можна знайти корисні програми,
+                        цікаві факти, пізнавальні матеріали,
+                        відкриття та ідеї, які допомагають
+                        краще зрозуміти сучасний цифровий світ.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- АРХІВ -->
+
+            <section>
+
+                <div class="section-label">
+                    DIGITAL ARCHIVE
+                </div>
+
+                <h2 class="section-title">
+                    Архів публікацій
+                </h2>
+
+                <p class="about-text">
+                    Збережена історія Telegram-каналу.
+                    Оберіть частину архіву для перегляду.
+                </p>
+
+                <div class="archive-grid">
+
+                    <a href="messages.html"
+                       class="archive-card">
+
+                        <div class="file-icon">▤</div>
+
+                        <h3>Архів публікацій</h3>
+
+                        <p>
+                            Перша частина збереженої
+                            історії каналу.
+                        </p>
+
+                        <div class="archive-link">
+                            Відкрити першу частину →
+                        </div>
+
+                    </a>
+
+
+                    <a href="messages2.html"
+                       class="archive-card">
+
+                        <div class="file-icon">▤</div>
+
+                        <h3>Архів публікацій</h3>
+
+                        <p>
+                            Продовження збереженої
+                            історії каналу.
+                        </p>
+
+                        <div class="archive-link">
+                            Відкрити другу частину →
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="archive-note">
+
+                    <strong>Примітка.</strong>
+                    Через велику кількість публікацій
+                    Telegram розділив експорт історії
+                    каналу на два HTML-файли.
+                    Обидва файли є послідовними частинами
+                    одного архіву.
+
+                </div>
+
+            </section>
+
+
+            <!-- ПРО ВЕБВЕРСІЮ -->
+
+            <section class="web-version">
+
+                <div class="section-label">
+                    ABOUT THIS WEBSITE
+                </div>
+
+                <h2 class="section-title">
+                    Про цю вебсторінку
+                </h2>
+
+                <p>
+                    Ця сторінка створена як вебверсія
+                    Telegram-каналу Computer Science FM.
+                    Вона слугує стартовою сторінкою
+                    для доступу до збереженої історії
+                    публікацій та знайомства з каналом.
+
+                    Матеріали архіву представлені
+                    в оригінальному HTML-форматі
+                    та відкриваються безпосередньо
+                    у браузері.
+                </p>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- ФУТЕР -->
+
+    <footer>
+        <div class="container footer-inner">
+
+            <div>
+                COMPUTER SCIENCE FM · 216.0 MHz
+            </div>
+
+            <div>
+                Київ, 2026 · <strong>Oleg Balabanov</strong>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
